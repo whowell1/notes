@@ -1,0 +1,80 @@
+﻿Containerization
+
+
+Container technology has been here for almost 10 years. Containerization technologies like Docker solved a key problem for developers, 'it works in my machine but I don't know why it doesn't work in your machine' problem. Docker is a Linux based system that enables developers to deploy their application and its dependencies into a container and push it to a centralized location. This container can be pulled down to a machine and the application should work without spending time downloading dependencies.
+
+
+ As Docker became more popular and more developers used Docker, managing different Docker containers became troublesome.
+
+
+ Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services that handles configuration and automation.
+
+
+
+
+ Simple Explanation
+
+
+
+
+ Kubernetes Architecture 
+
+
+
+
+
+
+
+
+Kube-API Server
+1. Authenticate User 
+2. Validate request
+3. Retrieve Data
+4. Update ETCD
+5. Scheduler
+6. Kubelet
+
+
+
+
+Kube Controller Manager
+* Controller 
+   * Monitors state continuously in the system
+* Brains of the system
+* Install it via kube- controller manager
+
+
+
+
+
+
+ETCD
+* Distributed reliable key-value store that is simple secure and fast
+* Stores nodes, PODs, configs, secrets, accounts, roles, etc
+
+
+Kube Scheduler
+* Decides where each pod goes on which node
+* It looks a each pod and tries to find a node for it
+* Install kube-scheduler and run it as a service
+
+
+Kubelet
+* Like a captain of a ship
+* It registers the node with the Kubernetes cluster
+* It creates a pod and monitors it 
+* it does NOT run automatically
+
+
+Kube-Proxy
+* All pods talk to each other through pod networks
+* Look for new service and create appropriate service to backend pods
+* (this has to be installed)
+
+
+
+
+ReplicaSet
+* Part of the Kube Controller Manager
+* Acts as  backup system
+* ReplicaSet is the newer version of the ReplicaController
